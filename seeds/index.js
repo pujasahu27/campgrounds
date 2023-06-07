@@ -30,9 +30,40 @@ const seedDB = async () => {
             author: '647a0904e4b7fac8d1e8f242',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://images.unsplash.com/photo-1476790422463-0f61b4722b8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHw0ODQzNTF8fHx8fHx8MTY4NDkxMjUxMw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores vero perferendis laudantium, consequuntur voluptatibus nulla architecto, sit soluta esse iure sed labore ipsam a cum nihil atque molestiae deserunt!',
+            price,
+            geometry: {
+                type: "Point",
+                coordinates: [
+                    cities[random1000].longitude,
+                    cities[random1000].latitude,
+                ]
+            },
 
+
+
+            images: [
+                // {
+                //  url: 'https://res.cloudinary.com/dgg7mioem/image/upload/v1685911942/YelpCamp/zxf00sutecnspu1wqpvc.jpg',
+                // filename: 'YelpCamp/zxf00sutecnspu1wqpvc',
+
+                // },
+                // {
+                //   url: 'https://res.cloudinary.com/dgg7mioem/image/upload/v1685911942/YelpCamp/t91mkjzxj5z1entnfxfu.jpg',
+                // filename: 'YelpCamp/t91mkjzxj5z1entnfxfu',
+
+                //  }
+                {
+                    url: 'https://res.cloudinary.com/dgg7mioem/image/upload/v1685978158/YelpCamp/li18ykde6sqo6qxyesj4.jpg',
+                    filename: 'YelpCamp/li18ykde6sqo6qxyesj4',
+
+                },
+                {
+                    url: 'https://res.cloudinary.com/dgg7mioem/image/upload/v1685978158/YelpCamp/etay0r59ysblhcenngcz.jpg',
+                    filename: 'YelpCamp/etay0r59ysblhcenngcz',
+
+                }
+            ]
 
         })
         await camp.save();
@@ -42,3 +73,4 @@ const seedDB = async () => {
 seedDB().then(() => {
     mongoose.connection.close();
 })
+
